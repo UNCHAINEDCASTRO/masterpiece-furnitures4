@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Masterpiece Furnitures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Masterpiece<span>Furnitures</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="cart.html" id="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="login.html" id="login-btn" class="btn-outline">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding: 3rem 0;">
+        <h1>Our Collection</h1>
+        
+        <div class="filter-buttons" style="margin: 2rem 0;">
+            <button onclick="filterProducts('all')" class="btn-outline">All</button>
+            <button onclick="filterProducts('Living Room')" class="btn-outline">Living Room</button>
+            <button onclick="filterProducts('Bedroom')" class="btn-outline">Bedroom</button>
+            <button onclick="filterProducts('Dining')" class="btn-outline">Dining</button>
+            <button onclick="filterProducts('Office')" class="btn-outline">Office</button>
+        </div>
+        
+        <div class="products-grid" id="all-products"></div>
+    </div>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllProducts();
+            updateCartCount();
+            updateAuthUI();
+        });
+    </script>
+</body>
+</html>
