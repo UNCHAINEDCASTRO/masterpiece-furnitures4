@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Masterpiece Furnitures</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Masterpiece<span>Furnitures</span></a>
+        </div>
+    </nav>
+
+    <div class="container" style="text-align: center; padding: 5rem 0; min-height: 60vh;">
+        <div style="background: white; padding: 3rem; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <div style="font-size: 4rem; color: #d4a574; margin-bottom: 1rem;">✓</div>
+            <h1>Thank You for Your Order!</h1>
+            <p style="font-size: 1.2rem; margin: 1.5rem 0; color: #555;">
+                Your order has been received and is being processed. You will receive a confirmation email shortly.
+            </p>
+            <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                <p><strong>Order Number:</strong> <span id="order-id">Loading...</span></p>
+                <p><strong>Estimated Delivery:</strong> 5-7 business days</p>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="dashboard.html" class="btn-primary" style="margin-right: 1rem;">View Orders</a>
+                <a href="products.html" class="btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get order ID from URL or generate
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order') || 'N/A';
+        document.getElementById('order-id').textContent = orderId;
+    </script>
+</body>
+</html>
